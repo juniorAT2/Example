@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RestController
-@RequestMapping("api/person")
+@RequestMapping("api/people")
 public class PeopleController {
     private AbstractPeopleService aps;
     @Autowired
