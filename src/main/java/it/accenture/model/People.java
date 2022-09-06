@@ -23,5 +23,4 @@ public class People {
     private String surname;
     @Column(name = "DOB")
     private LocalDate dob;
-
 }
