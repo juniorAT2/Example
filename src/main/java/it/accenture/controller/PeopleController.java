@@ -15,5 +15,4 @@ public class PeopleController {
     public PeopleController (AbstractPeopleService aps) {
         this.aps = aps;
     }
-
 }
