@@ -1,27 +1,30 @@
 package it.accenture.model;
 
+import it.accenture.model.abstractions.WithId;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+
 import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-public class Person {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+public class Person implements WithId<Long> {
+
     private Long id;
-    @Column(name = "NAME")
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     private String name;
-    @Column(name = "SURNAME")
     private String surname;
-//    @Column(name = "DOB")
-//    private LocalDate dob;
 }

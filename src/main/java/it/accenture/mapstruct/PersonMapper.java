@@ -5,7 +5,10 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+import java.util.List;
+import java.util.Optional;
+
+@Mapper(componentModel = "spring")
 public interface PersonMapper {
     PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
 
@@ -13,4 +16,6 @@ public interface PersonMapper {
     PersonDTO fromPerson (Person person);
     @Mapping(target = "id", source = "id")
     Person toPerson(PersonDTO personDTO);
+    List<PersonDTO> fromPerson(Iterable<Person> all);
+    PersonDTO fromPerson(Optional<Person> one);
 }
