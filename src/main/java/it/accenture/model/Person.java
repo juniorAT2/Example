@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class People {
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +22,6 @@ public class People {
     private String name;
     @Column(name = "SURNAME")
     private String surname;
-    @Column(name = "DOB")
-    private LocalDate dob;
+//    @Column(name = "DOB")
+//    private LocalDate dob;
 }

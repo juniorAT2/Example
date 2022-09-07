@@ -1,5 +1,5 @@
 package it.accenture.service.abstraction;
 
 
-public interface AbstractPeopleService {
+public interface AbstractPersonService {
 }
