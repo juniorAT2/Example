@@ -1,12 +1,12 @@
-package it.accenture.repositories.implementations.jdbc;
+package it.accenture.repositories;
 
 import it.accenture.model.Person;
-import it.accenture.repositories.abstractions.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @Repository
 @Profile("jdbc")
-public class JdbcPersonRepository implements PersonRepository {
+public class JdbcPersonRepository implements CrudRepository<Person, Long> {
 
     private final JdbcTemplate template;
 

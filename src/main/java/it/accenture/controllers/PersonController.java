@@ -4,7 +4,7 @@ import it.accenture.dtos.PersonDTO;
 import it.accenture.exceptions.EntityNotFoundException;
 import it.accenture.mapstruct.PersonMapper;
 import it.accenture.model.Person;
-import it.accenture.services.implementations.PersonCrudService;
+import it.accenture.services.PersonCrudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

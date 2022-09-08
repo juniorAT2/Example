@@ -1,7 +1,6 @@
 package it.accenture.model;
 
 
-import it.accenture.model.abstractions.WithId;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor

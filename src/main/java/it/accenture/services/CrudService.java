@@ -1,7 +1,7 @@
-package it.accenture.services.implementations;
+package it.accenture.services;
 
 import it.accenture.exceptions.EntityNotFoundException;
-import it.accenture.model.abstractions.WithId;
+import it.accenture.model.WithId;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

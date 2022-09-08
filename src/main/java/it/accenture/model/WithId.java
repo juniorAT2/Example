@@ -1,4 +1,4 @@
-package it.accenture.model.abstractions;
+package it.accenture.model;
 
 public interface WithId<K> {
     K getId();
