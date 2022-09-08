@@ -1,22 +1,20 @@
 package it.accenture.model;
 
 
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
-
-
+import it.accenture.model.abstractions.WithId;
 public class Person implements WithId<Long> {
     private Long id;
     private String name;
     private String surname;
 
+    public Person () {
+        super();
+    }
     public Person(Long id, String name, String surname) {
         this.id = id;
         this.name = name;
         this.surname = surname;
     }
-
     @Override
     public Long getId() {
         return id;

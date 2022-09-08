@@ -1,14 +1,53 @@
-package it.accenture.services;
+package it.accenture.services.implementations;
 
 import it.accenture.model.Person;
-import it.accenture.repositories.JdbcPersonRepository;
-import it.accenture.repositories.PersonRepository;
+import it.accenture.repositories.implementations.jdbc.JdbcPersonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
-public class PersonCrudService extends CrudService<Person, Long, PersonRepository> {
+import java.util.List;
 
-    public PersonCrudService(PersonRepository repo) {
-        super(repo, Person.class);
+@Service
+public class PersonCrudService {
+    private JdbcPersonRepository personRepository;
+    @Autowired
+    public PersonCrudService (JdbcPersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
+    public List<Person> getAll() {
+        return personRepository.findAll();
+    }
+
+    public String addPerson(Person person) {
+        String response = null;
+        if(personRepository.addPerson(person)){
+            response = "Successfully Added";
+        }
+        else {
+            response = "Somthing went wrong. Not added, please try again.";
+        }
+        return response;
+    }
+
+    public String updatePerson(Person person) {
+        String response = null;
+        if(personRepository.updatePerson(person)){
+            response = "Successfully Updated";
+        }
+        else {
+            response = "Somthing went wrong. Not updated, please try again.";
+        }
+        return response;
+    }
+
+    public String deletePerson(Long personId) {
+        String response = null;
+        if(personRepository.deletePerson(personId)){
+            response = "Successfully Delete";
+        }
+        else {
+            response = "Somthing went wrong. Not deleted, please try again.";
+        }
+        return response;
     }
 }
