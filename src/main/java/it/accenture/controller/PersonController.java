@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Connection;
 import java.util.List;
 
 @CrossOrigin
@@ -20,8 +21,9 @@ public class PersonController {
     PersonMapper pMapper;
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    public void save (@RequestBody PersonDTO pDTO) {
-        Person person = pMapper.toPerson(pDTO);
+    public void save (@RequestParam String name,
+                      @RequestParam String surname) {
+        Person person = new Person(name, surname);
         pService.save(person);
     }
     @GetMapping("/")
