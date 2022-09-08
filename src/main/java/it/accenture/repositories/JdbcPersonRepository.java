@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @Repository
 @Profile("jdbc")
-public class JdbcPersonRepository implements CrudRepository<Person, Long> {
+public class JdbcPersonRepository implements PersonRepository {
 
     private final JdbcTemplate template;
 
@@ -54,10 +54,12 @@ public class JdbcPersonRepository implements CrudRepository<Person, Long> {
         return template.query("SELECT * FROM PERSON", this::rowMapper);
     }
 
+    @Override
     public List<Person> findAll(Sort sort) {
         return null;
     }
 
+    @Override
     public Page<Person> findAll(Pageable pageable) {
         return null;
     }
@@ -112,6 +114,7 @@ public class JdbcPersonRepository implements CrudRepository<Person, Long> {
         return p;
     }
 
+    @Override
     public Object[] getComponents(Person p){
         return new Object[]{ p.getId(), p.getName(), p.getSurname()};
     }

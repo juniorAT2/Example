@@ -9,7 +9,7 @@ import java.util.Optional;
 public class CrudService<T extends WithId<K>, K, R extends CrudRepository<T, K>>  {
     protected final R repo;
     protected Class<?> entityClass;
-    public static final String ERROR_NOT_FOUND = "L'entità %s con id %d non esiste";
+    public static final String ERROR_NOT_FOUND = "Entity %s with id %d does not exist.";
     public CrudService(R repo, Class<?> entityClass){
         this.repo = repo;
         this.entityClass = entityClass;
