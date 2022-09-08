@@ -12,18 +12,14 @@ import java.util.List;
 public class PersonController {
 
     private final PersonCrudService crudService;
-    //private AbstractCrudService<Classroom, Long> crudService;
-
     @Autowired
     public PersonController(PersonCrudService crudService) {
         this.crudService = crudService;
     }
-
     @GetMapping("/")
     public List<Person> getAll() {
         return crudService.getAll();
     }
-
     @PostMapping("/")
     public String addPerson(@RequestBody Person person) {
         return crudService.addPerson(person);

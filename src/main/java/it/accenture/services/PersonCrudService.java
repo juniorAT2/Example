@@ -1,4 +1,4 @@
-package it.accenture.services.implementations;
+package it.accenture.services;
 
 import it.accenture.model.Person;
 import it.accenture.repositories.implementations.jdbc.JdbcPersonRepository;
@@ -28,7 +28,6 @@ public class PersonCrudService {
         }
         return response;
     }
-
     public String updatePerson(Person person) {
         String response = null;
         if(personRepository.updatePerson(person)){
@@ -39,7 +38,6 @@ public class PersonCrudService {
         }
         return response;
     }
-
     public String deletePerson(Long personId) {
         String response = null;
         if(personRepository.deletePerson(personId)){

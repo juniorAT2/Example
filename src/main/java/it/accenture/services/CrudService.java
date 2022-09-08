@@ -14,15 +14,12 @@ public class CrudService<T extends WithId<K>, K, R extends CrudRepository<T, K>>
         this.repo = repo;
         this.entityClass = entityClass;
     }
-
     public Iterable<T> getAll() {
         return repo.findAll();
     }
-
     public Optional<T> findById(K k) {
         return repo.findById(k);
     }
-
     public void deleteById(K k) throws EntityNotFoundException {
         if (exists(k)) {
             repo.deleteById(k);
@@ -30,16 +27,13 @@ public class CrudService<T extends WithId<K>, K, R extends CrudRepository<T, K>>
             throw new EntityNotFoundException(ERROR_NOT_FOUND, entityClass, (long) k);
         }
     }
-
     public T saveOrUpdate(T t) throws EntityNotFoundException {
         if (t.getId()!=null && !t.getId().equals(0) && !exists(t.getId())) {
             throw new EntityNotFoundException(ERROR_NOT_FOUND, entityClass, (long) t.getId());
         }
         return repo.save(t);
     }
-
     public boolean exists(K id) {
         return findById(id).isPresent();
     }
-
 }
