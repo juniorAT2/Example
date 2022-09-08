@@ -1,8 +1,15 @@
-package it.accenture.dto;
+package it.accenture.dtos;
 
-import it.accenture.model.abstractions.WithId;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public class PersonDTO implements WithId<Long> {
+
+@AllArgsConstructor
+@NoArgsConstructor
+public class PersonDTO {
+
     private Long id;
     private String name;
     private String surname;
