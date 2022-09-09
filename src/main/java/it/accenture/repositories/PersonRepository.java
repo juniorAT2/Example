@@ -1,4 +1,4 @@
-package it.accenture.repositories.implementations.jdbc;
+package it.accenture.repositories;
 
 import it.accenture.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.util.List;
 
 @Repository
-public class JdbcPersonRepository {
+public class PersonRepository {
 
     private final JdbcTemplate template;
     private final String GET_ALL = "SELECT * FROM PERSON";
@@ -25,7 +25,7 @@ public class JdbcPersonRepository {
         return person;
     };
     @Autowired
-    public JdbcPersonRepository(JdbcTemplate template) {
+    public PersonRepository(JdbcTemplate template) {
         this.template = template;
     }
     public List<Person> findAll () {

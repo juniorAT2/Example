@@ -1,7 +1,7 @@
 package it.accenture.services;
 
 import it.accenture.model.Person;
-import it.accenture.repositories.implementations.jdbc.JdbcPersonRepository;
+import it.accenture.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,9 +9,9 @@ import java.util.List;
 
 @Service
 public class PersonCrudService {
-    private JdbcPersonRepository personRepository;
+    private PersonRepository personRepository;
     @Autowired
-    public PersonCrudService (JdbcPersonRepository personRepository) {
+    public PersonCrudService (PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
     public List<Person> getAll() {
