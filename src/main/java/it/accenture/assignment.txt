@@ -1,0 +1,5 @@
+creare controlle che esponga api riguardanti entity (Città)
+utilizzare meno codice scritto da me! estendendo CrudRepository
+attenzione alle limitazioni
+
+integrare lo swagger: introdurre 2 dependency nel pom
